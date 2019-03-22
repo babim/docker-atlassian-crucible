@@ -24,6 +24,9 @@ RUN wget --no-check-certificate -O - https://raw.githubusercontent.com/babim/doc
 # install
 RUN wget --no-check-certificate -O - https://raw.githubusercontent.com/babim/docker-tag-options/master/z%20Atlassian/${SOFT}_install.sh | bash
 
+# prepare visible code
+RUN mkdir -p /etc-start && mv ${SOFT_INSTALL} /etc-start/${SOFT}
+
 # Use the default unprivileged account. This could be considered bad practice
 # on systems where multiple processes end up being executed by 'daemon' but
 # here we only ever run one process anyway.
