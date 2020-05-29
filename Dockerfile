@@ -1,9 +1,9 @@
-FROM openjdk:8-alpine
+FROM adoptopenjdk/openjdk11:alpine
 
 # Configuration variables.
 ENV SOFT		crucible
 #ENV SOFTSUB		core
-ENV OPENJDKV		8
+ENV OPENJDKV		11
 ENV CRUCIBLE_VERSION	4.8.1
 ENV CRUCIBLE_HOME	/var/atlassian/${SOFT}
 ENV CRUCIBLE_INSTALL	/opt/atlassian/${SOFT}
