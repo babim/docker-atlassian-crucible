@@ -10,7 +10,8 @@ ENV CRUCIBLE_INSTALL	/opt/atlassian/${SOFT}
 ENV SOFT_HOME		${CRUCIBLE_HOME}
 ENV SOFT_INSTALL	${CRUCIBLE_INSTALL}
 ENV SOFT_VERSION	${CRUCIBLE_VERSION}
-
+RUN apk update && apk upgrade && \
+    apk add --no-cache bash git openssh
 # download option
 RUN apk add --no-cache curl bash && \
 	curl -s https://raw.githubusercontent.com/babim/docker-tag-options/master/z%20SCRIPT%20AUTO/option.sh -o /option.sh && \
